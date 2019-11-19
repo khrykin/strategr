@@ -1,0 +1,74 @@
+<%- include('square', { 
+    bg: 'light-red',
+    fg: 'near-white',
+    title: 'Activities', 
+    subtitle: 'Make a color-coded list of your daily activities',
+    leftPic: './resources/mac_menu.png',
+    rightPic: './resources/mac_activities.png',
+    hints: `
+            <p>
+              Click the "<span class="larger">≡</span>" button or hit
+              <code>⌘⇧A</code> to open activities window;
+            </p>
+            <p>
+              Click "<span class="larger">+</span>" to add new activity;
+              <br />Right-click on the activity to edit.
+            </p>
+            ` 
+}) -%>
+
+<%- include('square', { 
+    bg: 'gold',
+    title: 'Sessions', 
+    subtitle: 'Organize your activities in time-boxed <strong>sessions</strong>',
+    rightPic: './resources/mac_select.png',
+    leftPic: './resources/mac_settings.png',
+    hints: `
+            <p>
+                Click on one or several empty <em>time-slots</em> and drag the selection
+                to the desired duration (hold <code>⌘</code> if time slot is already
+                occupied);
+            </p>
+            <p>
+                Click again to select an activity.
+            </p>
+            <p>
+                Press <code>⌘,</code> to adjust time grid settings.
+            </p>
+        ` 
+}) -%>
+
+<%- include('square', { 
+    bg: 'light-blue',
+    title: 'Arrange', 
+    subtitle: 'Move session boundaries or drag whole sessions around',
+    rightPic: './resources/mac_move.png',
+    leftPic: './resources/mac_resize.png',
+    hints: `
+            <p>
+                Click into session boundary and drag to redistribute time between
+                sessions;
+            </p>
+            <p>
+                Click into the middle of a session to drag it around.
+            </p>
+        ` 
+}) -%>
+
+<%- include('square', { 
+    bg: 'light-green',
+    title: 'Stay Focused', 
+    subtitle: 'Track current session, and get notified when next session starts',
+    rightPic: './resources/mac_main.png',
+    hints: `
+            <p>
+                Press <code>⌘/</code> to jump to the current time marker.
+            </p>
+            <p>
+                You'll be notified in 5 mins before and right at the beginning of a
+                session.
+                <small class="db mt2">*Notifications are turned on by default, you can disable them in your
+                operating system settings.</small>
+            </p>
+        ` 
+}) -%>
