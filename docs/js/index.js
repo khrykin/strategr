@@ -14,15 +14,20 @@ function loadGithubButtonsScript() {
  */
 
 function loadTagName() {
-  const req = new XMLHttpRequest();
-  const url =
+  let req = new XMLHttpRequest();
+  let url =
     "https://api.github.com/repos/khrykin/StrategrDesktop/releases/latest";
   req.open("GET", url);
   req.send();
   req.onreadystatechange = e => {
     if (req.readyState == 4 && req.status == 200) {
-      const json = JSON.parse(req.responseText);
-      const tag = json.tag_name;
+      let json = JSON.parse(req.responseText);
+      let tag = json.tag_name;
+
+      let asset = json.assets.filter(a => a.name.includes(".dmg"))[0];
+
+      macOS.getElementsByTagName("A")[0].setAttribute("href", asset.browser_download_url);
+
       if (window.tagName) {
         tagName.innerText = " " + tag;
       }
